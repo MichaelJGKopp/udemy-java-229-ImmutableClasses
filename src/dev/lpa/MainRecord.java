@@ -20,6 +20,8 @@ public class MainRecord {
     kids[0] = jim;
     kids[1] = new PersonRecord("Ann", "04/04/1936");
     System.out.println(johnCopy);
-    
+
+    johnKids[0] = new PersonRecord("Ann", "04/04/1936");
+    System.out.println(john);
   }
 }
