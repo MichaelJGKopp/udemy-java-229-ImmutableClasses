@@ -8,8 +8,8 @@ public class PersonOfInterest extends PersonImmutable {
     super(person);
   }
 
-  @Override
-  public PersonImmutable[] getKids() {
-    return super.kids;
-  }
+//  @Override
+//  public PersonImmutable[] getKids() {
+//    return super.kids;
+//  }
 }
