@@ -6,7 +6,7 @@ public class PersonImmutable {
 
   private final String name;
   private final String dob;
-  private final PersonImmutable[] kids;
+  protected final PersonImmutable[] kids;
 
   public PersonImmutable(String name, String dob) {
     this(name, dob, null);
@@ -16,6 +16,12 @@ public class PersonImmutable {
     this.name = name;
     this.dob = dob;
     this.kids = kids == null ? null : Arrays.copyOf(kids, kids.length);
+  }
+
+  protected PersonImmutable(PersonImmutable person) {
+    this.name = person.name;
+    this.dob = person.dob;
+    this.kids = person.kids;
   }
 
   public String getName() {
@@ -38,6 +44,6 @@ public class PersonImmutable {
       Arrays.setAll(names, i -> names[i] = kids[i] == null ? "" : kids[i].name);
       kidString = String.join(", ", names);
     }
-    return name + ", dob = " + dob + ", kids = " + kidString;
+    return name + ", dob = " + getDob() + ", kids = " + kidString;
   }
 }
