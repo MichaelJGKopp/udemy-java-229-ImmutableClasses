@@ -30,7 +30,7 @@ public class PersonImmutable {
     return dob;
   }
 
-  public PersonImmutable[] getKids() {
+  public final PersonImmutable[] getKids() {
     return kids == null ? null : Arrays.copyOf(kids, kids.length);
   }
 
