@@ -8,6 +8,12 @@ public record PersonRecord(String name, String dob, PersonRecord[] kids) {
     this(name, dob, new PersonRecord[20]);
   }
 
+  public PersonRecord(String name, String dob, PersonRecord[] kids) {
+    this.name = name;
+    this.dob = dob;
+    this.kids = Arrays.copyOf(kids, 20);
+  }
+
   @Override
   public String toString() {
     String kidString = "n/a";
